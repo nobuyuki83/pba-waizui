@@ -70,7 +70,7 @@ There are many small programming assignments. To do the assignments, you need to
 
 [How to Submit the Assignments](doc/submit.md)
 
-| Task ID | Language | Title | Thumbnail |
+| Task ID | Language | Title (tantative) | Thumbnail |
 | :--- | :--- | :--------------------------- | :----------------------------------------- |
 | task00 | Rust | Building Rust project & submitting GitHub pull request |  |
 | task01 | Rust | Implicit Time Integration    | |
@@ -91,6 +91,7 @@ There are many small programming assignments. To do the assignments, you need to
 - Don't post the answers of the assignment on Slack 
 - Late submission of an assignment is subject to grade deduction
 - Score each assignment will not be open soon (instructor needs to adjust weights of the score later)
+- You can use AIs tool for coding.
 
 
 
