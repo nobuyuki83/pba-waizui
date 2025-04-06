@@ -6,7 +6,7 @@ Lecture at graduate school of information science and technology in the universi
 
 #### ITC-LMS 
 
-For Slack and GitHub Classroom invitations
+For Zoom link, Slack, and GitHub Classroom invitations
 
 - https://utol.ecc.u-tokyo.ac.jp/lms/course?idnumber=2025_4886_4860-1081_01
 
@@ -15,6 +15,8 @@ Dr. Nobuyuki Umetani
 - email: n.umetani@gmail.com
 - url: http://www.nobuyuki-umetani.com/
 - lab's website: https://cgenglab.github.io/en/
+
+- Teaching assistants: Kenji Tojo (https://kenji-tojo.github.io/), Yuhan Wu (https://yoharol.github.io/pages/myself/)
 
 #### Time
 - Monday 2rd period, 10:25pm - 12:10pm
