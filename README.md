@@ -39,7 +39,7 @@ Topics:
 
 | Day | Topic | Assignment | Slide |
 |:----|:---|:---|-----|
-| (1)<br> Apr. 7 | **Introduction**<br>Data structure for simulation, Explicit/implicit shape representation | | |
+| (1)<br> Apr. 7 | **Introduction**<br>Data structure for simulation, Explicit/implicit shape representation | | [1,2] |
 | (2)<br> Apr. 21 | **Programming 1**<br>Introduction to Rust language, GitHub | task00 | |
 | (3)<br> Apr. 28 | **Time Integration**<br>Backward & forward Euler method, particle system, Barnes–Hut method | task01 | |
 | (4)<br> May 8 | **Newtonian Mechanics**<br/>| task02 | |
@@ -55,7 +55,8 @@ Topics:
 
 #### Slides
 
-To be Added
+- [1] [Introduction](http://nobuyuki-umetani.com/pba2025s/introduction.pdf)
+- [2] [Data Structure](http://nobuyuki-umetani.com/pba2025s/data_structure.pdf)
 
 ## Grading
 
