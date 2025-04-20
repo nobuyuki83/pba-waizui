@@ -40,7 +40,7 @@ Topics:
 | Day | Topic | Assignment | Slide |
 |:----|:---|:---|-----|
 | (1)<br> Apr. 7 | **Introduction**<br>Data structure for simulation, Explicit/implicit shape representation | | [1,2] |
-| (2)<br> Apr. 21 | **Programming 1**<br>Introduction to Rust language, GitHub | task00 | |
+| (2)<br> Apr. 21 | **Programming 1**<br>Introduction to Rust language, GitHub | [task00](task00) | [3,4] |
 | (3)<br> Apr. 28 | **Time Integration**<br>Backward & forward Euler method, particle system, Barnes–Hut method | task01 | |
 | (4)<br> May 8 | **Newtonian Mechanics**<br/>| task02 | |
 | (5)<br> May 12 | **Collision Detection**<br/>principal component analysis<br>sort & sweep method, bounding volume hierarchy<br> | task03 | |
@@ -57,6 +57,10 @@ Topics:
 
 - [1] [Introduction](http://nobuyuki-umetani.com/pba2025s/introduction.pdf)
 - [2] [Data Structure](http://nobuyuki-umetani.com/pba2025s/data_structure.pdf)
+- [3] [Rust](http://nobuyuki-umetani.com/pba2025s/rust.pdf)
+- [4] [Git & GitHub](http://nobuyuki-umetani.com/pba2025s/git_wo_link.pdf) 
+- [5] [Time Integration](http://nobuyuki-umetani.com/pba2025s/time_integration.pdf)
+
 
 ## Grading
 
@@ -73,7 +77,7 @@ There are many small programming assignments. To do the assignments, you need to
 
 | Task ID | Language | Title (tantative) | Thumbnail |
 | :--- | :--- | :--------------------------- | :----------------------------------------- |
-| task00 | Rust | Building Rust project & submitting GitHub pull request |  |
+| [task00](task00) | Rust | Building Rust project & submitting GitHub pull request | ![](task00/thumbnail.gif) |
 | task01 | Rust | Implicit Time Integration    | |
 | task02 | Rust | Linear Momentum Conservation | |
 | task03 | Rust | Acceleration of N-body Simulation | |
