@@ -34,13 +34,13 @@ $ cargo --version
 if you don't have the local repository (repository on your computer), clone it from the remote repository (repository on the GitHub).
 
 ```bash
-$ git clone https://github.com/PBA-2025/acg-<username>.git
+$ git clone https://github.com/PBA-2025/pba-<username>.git
 ```
 
 Go to the top of the local repository, then make sure you are in the `main` branch
 
 ```bash
-$ cd acg-<username>  # go to the local repository
+$ cd pba-<username>  # go to the local repository
 $ git checkout main  # set main branch as the current branch
 ```
 

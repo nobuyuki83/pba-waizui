@@ -1,5 +1,7 @@
 # Physics-based Animation 4860-1081 2025S
 
+[![Rust CI](https://github.com/PBA-2025/main/actions/workflows/CI.yml/badge.svg)](https://github.com/PBA-2025/main/actions/workflows/CI.yml)
+
 ![teaser](doc/rep_image.png)
 
 Lecture at graduate school of information science and technology in the university of Tokyo, spring semester, 2025
