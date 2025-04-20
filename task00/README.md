@@ -6,7 +6,7 @@
 
 ----
 
-**The class only introduce some basics of Rust and GitHub. If you have any questions, or if you encounter any problem, ask chat-based AI (e.g., ChatGPT, DeepSeek) first.**
+**The class introduce only very basics of Rust and GitHub. If you have any questions, or if you encounter any problem, ask chat-based AI (e.g., ChatGPT, DeepSeek) first.**
 
 ### Environment Set Up
 
