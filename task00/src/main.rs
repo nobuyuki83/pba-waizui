@@ -57,13 +57,20 @@ fn problem1() -> anyhow::Result<()> {
         // write some code below.
         
         // modify the defninition of p2
+        let radian2 = radian*2.;
         let p2 = [
-            p1[0],
-            p1[1],
+            p1[0] + 50f32 * radian2.cos(),
+            p1[1] - 50f32 * radian2.sin(),
         ];
         del_canvas::rasterize::line::draw_dda(&mut canvas.data, canvas.width, &p1, &p2, 2);
         trajectory.push(p2); // hint
         // draw trajectoty using for loop below.
+
+        for i in 1..trajectory.len() {
+            let p_s = trajectory[i-1];
+            let p_e = trajectory[i];
+            del_canvas::rasterize::line::draw_dda(&mut canvas.data, canvas.width, &p_s, &p_e, 3);
+        }
 
         // ---------------------
         // no further edit from here
