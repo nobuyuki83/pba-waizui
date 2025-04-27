@@ -48,7 +48,7 @@ Run the code
 ```bash
 cargo run --release
 ```
-Take a screenshot image (looks like image at the top)
+You will see `result.gif`. Rename it to `problem0.gif`, then you will see the image below: 
 
 ![problem0](problem0.gif)
 
@@ -61,11 +61,20 @@ Observe the energy gain artifact.
 
 ## Problem 2
 
-Modify the code at `line #43`  and `line #44` in [src/main.rs](src/main.rs) to integrate the equation of motion using the ***Backward(Implicit) Euler Method*** scheme for the movement of ***Red object***. 
+Modify the code at `line #53` in [src/main.rs](src/main.rs) to integrate the equation of motion using the ***backward (implicit) euler method*** scheme for the movement of ***red object***.
+
+After the edit, run the code and rename the `result.gif` to `problem1.gif`.  You will see the result below.
 
 `task01/problem1.gif`
 
 ![problem1](problem1.gif)
+
+
+After the coding clean your code using the following commands.  
+```bash
+$ cargo clippy #  code improvement suggestion
+$ cargo fmt # code formatter
+```
 
 
 ## After Doing the Assignment
