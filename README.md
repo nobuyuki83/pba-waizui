@@ -43,7 +43,7 @@ Topics:
 |:----|:---|:-----------------|-----|
 | (1)<br> Apr. 7 | **Introduction**<br>Data structure for simulation, Explicit/implicit shape representation |                  | [1,2] |
 | (2)<br> Apr. 21 | **Programming 1**<br>Introduction to Rust language, GitHub | [task00](task00) | [3,4] |
-| (3)<br> Apr. 28 | **Time Integration**<br>Backward & forward Euler method, particle system, Barnes–Hut method | [task01](task01) | [5] |
+| (3)<br> Apr. 28 | **Time Integration**<br>Backward & forward Euler method, particle system, Barnes–Hut method | [task01](task01) | [5,6] |
 | (4)<br> May 8 | **Newtonian Mechanics**<br/>| task02           |     |
 | (5)<br> May 12 | **Collision Detection**<br/>principal component analysis<br>sort & sweep method, bounding volume hierarchy<br> | task03           |     |
 | (6)<br> May 19 | **Optimization**<br>Hessian & Jacdobian, Sparse matrix data structure, Conjugate gradient method | task04           |     |
@@ -62,6 +62,7 @@ Topics:
 - [3] [Rust](http://nobuyuki-umetani.com/pba2025s/rust.pdf)
 - [4] [Git & GitHub](http://nobuyuki-umetani.com/pba2025s/git_wo_link.pdf) 
 - [5] [Time Integration](http://nobuyuki-umetani.com/pba2025s/time_integration.pdf)
+- [6] [Floating Point Number](http://nobuyuki-umetani.com/pba2025s/floating_point_number.pdf)
 
 
 ## Grading
