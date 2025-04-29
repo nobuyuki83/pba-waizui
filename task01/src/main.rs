@@ -52,15 +52,30 @@ fn time_integration_implicit(rv0: &mut (f32, f32), dt: f32) {
     // ----------------------
     // write some code below
 
-    let dfdr = 2f32 / (r0 * r0 * r0); // hint!
+    let dfdr = 2f32 / (r0 * r0 * r0); 
+    let fr0 = -1f32 / (r0 * r0); // f(r0)
 
-    // let a_mat = [[???, ???], [???, ???]]; // hint
-    // let b_vec = [???, ???]; // hint
-    // let a_mat_inv = inverse_matrix_2x2(&a_mat).unwrap(); // hint
-    // let res = mult_mat2_vec(&a_mat_inv, &b_vec); // hint
-    // *rv0 = (res[0], res[1]); // hint
+    /* 
+    backward Euler:
+    r1 = r0+dt*v1, 
+    v1 = v0+dt*f(r1)
+    where f(r1) ~ f(r0) + dfdr(r0)*(r1-r0)
+    thus: 
+    v1 = v0 + dt*f(r0)+ dt*dfdr(r0)*r1 - dt*dfdr(r0)*r0
 
-    *rv0 = (r0, v0); // delete this line
+    rearrange the linear system:
+    r1 - dt*v1 = r0
+    -dt*dfdr(r0)*r1 + v1 = v0 - dt*dfdr(r0)*r0 + dt*f(r0)
+    
+    let x = [r1,v1], A = [[1,-dt],[-dt*dfdr(r0),1]]
+    the system can be wrritten as: Ax = b
+    solve this we get x
+    */
+    let a_mat = [[1.0f32, -dt], [-dt * dfdr, 1.0f32]]; 
+    let b_vec = [r0, v0 - dt * dfdr * r0 + dt * fr0]; 
+    let a_mat_inv = inverse_matrix_2x2(&a_mat).unwrap();
+    let res = mult_mat2_vec(&a_mat_inv, &b_vec); //
+    *rv0 = (res[0], res[1]); //
 
     // no further edit from here
     // ----------------------
