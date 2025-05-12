@@ -2,7 +2,7 @@
 
 ![preview](thumbnail.gif)
 
-**Deadline: May 18 (Thu) at 15:00pm**
+**Deadline: May 15 (Thu) at 15:00pm**
 
 ----
 
@@ -10,7 +10,6 @@
 
 If you have not done the [task00](../task00), do it first to set up the rust development environment.
 
-You do not need to accept a pull request from the GitHub classroom anymore (the instructor synchronizes your remote repository using a script). 
 First, please update your local repository.
 
 ```bash
