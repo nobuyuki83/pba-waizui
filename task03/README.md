@@ -48,9 +48,9 @@ This program computes [n-body simulation](https://en.wikipedia.org/wiki/N-body_s
 
 | #particle | time w/o acceleration (sec) | time w/ acceleration (sec) |
 |-----------|-----------------------------|----------------------------|
-| 2500      |  15.45                      | ?                          |
-| 5000      |  64.20                      | ?                          |
-| 10000     |  348.50                     | ?                          |
+| 2500      |  15.45                      | 8.54                       |
+| 5000      |  64.20                      | 18.17                      |
+| 10000     |  348.50                     | 42.27                      |
 
 Run the program with different numbers of the particles (2.5k, 5k, and 10k) by changing the command line option `--num_particle`. 
 Record the computation time by filling the 2nd column of the table above.
