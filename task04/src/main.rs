@@ -1,4 +1,3 @@
-
 type Vec2f = nalgebra::Vector2<f32>;
 
 /// node of the Kd-tree
@@ -10,15 +9,17 @@ pub struct Node {
     pub idx_node_right: usize,
 }
 
-impl Node {
-    pub fn default() -> Self {
+impl std::default::Default for Node {
+    fn default() -> Self {
         Self {
             pos: Vec2f::new(0., 0.),
             idx_node_left: usize::MAX,
             idx_node_right: usize::MAX,
         }
     }
+}
 
+impl Node {
     pub fn new(x: f32, y: f32) -> Self {
         Self {
             pos: Vec2f::new(x, y),
@@ -189,12 +190,12 @@ fn nearest_kdtree_naive(
         return;
     }
 
-    /// --------------------------------------------------------------
-    /// write some coe below to cull the branch of the Kd-tree.
-    /// Check if the region covered this branch does not contain a point that is nearer to the current nearest.
+    // --------------------------------------------------------------
+    // write some coe below to cull the branch of the Kd-tree.
+    // Check if the region covered this branch does not contain a point that is nearer to the current nearest.
 
-    /// no further edit from here
-    /// ---------------------------------------------------------------
+    // no further edit from here
+    // ---------------------------------------------------------------
 
     let pos_node = nodes[idx_node].pos;
 
@@ -375,22 +376,22 @@ fn visualize(nodes: &[Node], aabb2: &[f32; 4]) -> anyhow::Result<()> {
             Vec2f::new(x, y)
         };
         let mut idx_node_nearest = 0usize;
-        nearest_kdtree_naive(&mut idx_node_nearest, &p1, &nodes, 0, &aabb2, 0);
+        nearest_kdtree_naive(&mut idx_node_nearest, &p1, nodes, 0, aabb2, 0);
         canvas.clear(0);
         draw_kdtree(
             &mut canvas.data,
             canvas.width,
             transform_ndc2pix.as_slice().try_into()?,
-            &nodes,
+            nodes,
             0,
-            &aabb2,
+            aabb2,
             0,
         );
         // draw bounding box
         del_canvas::rasterize::aabb2::stroke_dda(
             &mut canvas.data,
             canvas.width,
-            &aabb2,
+            aabb2,
             transform_ndc2pix.as_slice().try_into()?,
             1,
         );
@@ -485,8 +486,8 @@ fn main() -> anyhow::Result<()> {
     for pos_in in &input_points {
         let mut idx_node_nearest = 0;
         let mut dist_nearest = (nodes[0].pos - pos_in).norm();
-        for i_node in 1..nodes.len() {
-            let dist = (nodes[i_node].pos - pos_in).norm();
+        for (i_node, node) in nodes.iter().enumerate().skip(1) {
+            let dist = (node.pos - pos_in).norm();
             if dist < dist_nearest {
                 idx_node_nearest = i_node;
                 dist_nearest = dist;

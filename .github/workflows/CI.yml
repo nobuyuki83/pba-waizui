@@ -38,3 +38,5 @@ jobs:
           cargo build --verbose
           cd ../task03
           cargo build --verbose                    
+          cd ../task04
+          cargo build --verbose
