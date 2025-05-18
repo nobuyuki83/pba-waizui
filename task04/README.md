@@ -62,7 +62,7 @@ cargo run --release -- --num-particle N
 Then, the program computes the nearest distance between `N` particles against `N` particles and report the computation time.
 
 There are 3 types of computation `brute force`, `kd-tree naive` and `kd-tree faster`. 
-Fill the 1st column of the table below for the `brute force` by running the program with different numbers of the particles (2.5k, 5k, and 10k) by changing the command line option `--num-particle`.
+Fill the 1st column of the table below for the `brute force` by running the program with different numbers of the particles (10k, 20k, and 40k) by changing the command line option `--num-particle`.
 
 | #particle | time bruteforce (ms) | time kd-tree naive (ms) | time kd-tree faster |
 |-----------|----------------------|-------------------------|---------------------|
