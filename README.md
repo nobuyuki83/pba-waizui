@@ -39,21 +39,21 @@ Topics:
 
 ## Lecture Schedule
 
-| Day              | Topic                                                                                                          | Assignment       | Slide |
-|:-----------------|:---------------------------------------------------------------------------------------------------------------|:-----------------|-------|
-| (1)<br> Apr. 7   | **Introduction**<br>Data structure for simulation, Explicit/implicit shape representation                      |                  | [1,2] |
-| (2)<br> Apr. 21  | **Programming 1**<br>Introduction to Rust language, GitHub                                                     | [task00](task00) | [3,4] |
-| (3)<br> Apr. 28  | **Time Integration**<br>Backward & forward Euler method, particle system, Barnes–Hut method                    | [task01](task01) | [5,6] |
-| (4)<br> May 8    | **Newtonian Mechanics**<br/>                                                                                   | [task02](task02) | [7]   |
-| (5)<br> May 12   | **Collision Detection**<br/>principal component analysis<br>sort & sweep method, bounding volume hierarchy<br> | [task03](task03) | [8,9] |
-| (6)<br> May 19   | **Optimization**<br>Hessian & Jacdobian, Sparse matrix data structure, Conjugate gradient method               | task04           |       |
-| (7)<br> May 26   | **Simple Elastic Energy**<br/>Newton-Raphson method<br>mass-spring system                                      | task05           |       |
-| (8)<br> June 9   | **Programming 2**<br>Introduction to Unity & C#                                                                | task06           |       |
-| (9)<br> June 16  | **Dynamic Simulation**<br/>Variational time integration                                                        | task07           |       |
-| (10)<br> June 23 | **Optimization with Constraint**<br/> Lagrange multiplier method                                               | task08           |       |
-| (11)<br> June 30 | **Rotation**<br>Rotation representation                                                                        | task09           |       |
-| (12)<br> July 7  | **Rigid Body Dynamics** <br/>inertia tensor, <br/>angular velocity                                             | task10           |       |
-| (13)<br> July 14 | **Continuum Mechanics**<br> tensor,<br> finite element method                                                  |                  |       |
+| Day              | Topic                                                                                                          | Assignment       | Slide   |
+|:-----------------|:---------------------------------------------------------------------------------------------------------------|:-----------------|---------|
+| (1)<br> Apr. 7   | **Introduction**<br>Data structure for simulation, Explicit/implicit shape representation                      |                  | [1,2]   |
+| (2)<br> Apr. 21  | **Programming 1**<br>Introduction to Rust language, GitHub                                                     | [task00](task00) | [3,4]   |
+| (3)<br> Apr. 28  | **Time Integration**<br>Backward & forward Euler method, particle system, Barnes–Hut method                    | [task01](task01) | [5,6]   |
+| (4)<br> May 8    | **Newtonian Mechanics**<br/>                                                                                   | [task02](task02) | [7]     |
+| (5)<br> May 12   | **Collision Detection**<br/>principal component analysis<br>sort & sweep method, bounding volume hierarchy<br> | [task03](task03) | [8,9]   |
+| (6)<br> May 19   | **Linear System**<br/>matrix data structure, Conjugate gradient method                                         | [task04](task04) | [10,11] |
+| (7)<br> May 26   | **Simple Elastic Energy**<br/>Newton-Raphson method<br>mass-spring system                                      | task05           |         |
+| (8)<br> June 9   | **Programming 2**<br>Introduction to Unity & C#                                                                | task06           |         |
+| (9)<br> June 16  | **Dynamic Simulation**<br/>Variational time integration                                                        | task07           |         |
+| (10)<br> June 23 | **Optimization with Constraint**<br/> Lagrange multiplier method                                               | task08           |         |
+| (11)<br> June 30 | **Rotation**<br>Rotation representation                                                                        | task09           |         |
+| (12)<br> July 7  | **Rigid Body Dynamics** <br/>inertia tensor, <br/>angular velocity                                             | task10           |         |
+| (13)<br> July 14 | **Continuum Mechanics**<br> tensor,<br> finite element method                                                  |                  |         |
 
 #### Slides
 
@@ -66,6 +66,8 @@ Topics:
 - [7] [Newtonian Mechanics](http://nobuyuki-umetani.com/pba2025s/newtonian_mechanics.pdf)
 - [8] [Jagged Array](http://nobuyuki-umetani.com/pba2025s/jagged_array.pdf)
 - [9] [Collision Detection](http://nobuyuki-umetani.com/pba2025s/collision_detection.pdf)
+- [10] [Matrix Data Structure](http://nobuyuki-umetani.com/pba2025s/matrix_data_structure.pdf)
+- [11] [Linear System Solver](http://nobuyuki-umetani.com/pba2025s/linear_system_solver.pdf) 
 
 ## Grading
 
