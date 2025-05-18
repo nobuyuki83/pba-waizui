@@ -80,13 +80,13 @@ There are many small programming assignments. To do the assignments, you need to
 
 [How to Submit the Assignments](doc/submit.md)
 
-| Task ID          | Language | Title (tantative)                                                   | Thumbnail                 |
+| Task ID          | Language | Title (tentative)                                                   | Thumbnail                 |
 |:-----------------|:---------|:--------------------------------------------------------------------|:--------------------------|
 | [task00](task00) | Rust     | Building Rust project & submitting GitHub pull request              | ![](task00/thumbnail.gif) |
 | [task01](task01) | Rust     | Implicit Time Integration                                           | ![](task01/thumbnail.gif) |
 | [task02](task02) | Rust     | Linear Momentum Conservation                                        | ![](task02/thumbnail.gif) |
 | [task03](task03) | Rust     | Acceleration of N-body Simulation                                   | ![](task03/thumbnail.gif) |
-| task04           | Rust     | Accelerated nearest search using Kd-Tree                            |                           |
+| [task04](task04) | Rust     | Accelerated nearest search using Kd-Tree                            | ![](task04/thumbnail.gif) |
 | task05           | Rust     | Solving Laplace equation with Gauss-Seidel Method                   |                           |
 | task06           | C#       | Gradient Descent for Mass-Spring Simulation                         |                           |
 | task07           | C#       | Dynamic Mass-spring System using Variational Euler Time Integration |                           |
