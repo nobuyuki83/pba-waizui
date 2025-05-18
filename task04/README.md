@@ -75,14 +75,14 @@ Observe the quadratic computational cost (x2 particle result in x4 time) for the
 Currently, the program does not **cull the tree branch**, and nearest distance computation using Kd-tree is slow.
 Let's fix it. 
 
-First, change the line #?, such that it culls the kd-tree's branch when the branch does not contain the points that is nearer to the current nearest candidate.
+First, change the line #194, such that it culls the kd-tree's branch when the branch does not contain the points that is nearer to the current nearest candidate.
 Use the function `signed_distance_aabb` to compute the distance between a point and the rectangle covered by the node.
 Fill the 2nd column of the table above. Observe that the computational cost changes linearly to the number of particle. 
 
 
 Second, Let's  accelerate the tree search by changing the order of the evaluation of the branch.
 Kd-tree is the binary tree i.e., there is left node and right node. 
-Change the code around line #? and line #? such that if left branch is closer to the right branch evaluate left branch and vice versa.
+Change the code around line #269 and line #285 such that if left branch is closer to the right branch evaluate left branch and vice versa.
 Fill the 3rd column of the table above. Observe that the computational cost changes linearly to the number of particles and the program runs much faster than the naive one.
 
 
