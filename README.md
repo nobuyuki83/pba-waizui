@@ -67,7 +67,8 @@ Topics:
 - [8] [Jagged Array](http://nobuyuki-umetani.com/pba2025s/jagged_array.pdf)
 - [9] [Collision Detection](http://nobuyuki-umetani.com/pba2025s/collision_detection.pdf)
 - [10] [Matrix Data Structure](http://nobuyuki-umetani.com/pba2025s/matrix_data_structure.pdf)
-- [11] [Linear System Solver](http://nobuyuki-umetani.com/pba2025s/linear_system_solver.pdf) 
+- [11] [Linear System Solver](http://nobuyuki-umetani.com/pba2025s/linear_system_solver.pdf)
+- [12] [Jacobian & Hessian](http://nobuyuki-umetani.com/pba2025s/jacobian_hessian.pdf)
 
 ## Grading
 
