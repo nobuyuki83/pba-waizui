@@ -39,4 +39,4 @@ jobs:
           cd ../task03
           cargo build --verbose                    
           cd ../task04
-          cargo build --verbose
+          cargo run --verbose --release
