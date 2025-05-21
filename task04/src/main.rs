@@ -191,8 +191,14 @@ fn nearest_kdtree_naive(
     }
 
     // --------------------------------------------------------------
-    // write some coe below to cull the branch of the Kd-tree.
+    // write some code below to cull the branch of the Kd-tree.
     // Check if the region covered this branch does not contain a point that is nearer to the current nearest.
+    let dis_nearest = (nodes[*idx_node_nearest].pos - pos_in).norm();
+    let signed_dis_cur = signed_distance_aabb(pos_in, aabb_node);
+    // the nearest point of aabb to interested point is farther, no need for check nodes inside aabb
+    if signed_dis_cur >= dis_nearest {
+        return;
+    }
 
     // no further edit from here
     // ---------------------------------------------------------------
@@ -262,6 +268,7 @@ fn nearest_kdtree_faster(
     aabb_node: &[f32; 4], // aabb of the current node
     i_depth: usize,
 ) {
+    use std::mem;
     if idx_node >= nodes.len() {
         // this node does not exist
         return;
@@ -271,7 +278,12 @@ fn nearest_kdtree_faster(
     // write some coe below to cull the branch of the Kd-tree.
     // Check if the region covered this branch does not contain a point that is nearer to the current nearest.
 
-    // Write the culling code that is the same as `nearest kdtree naive`
+    let dis_nearest = (nodes[*idx_node_nearest].pos - pos_in).norm();
+    let signed_dis_cur = signed_distance_aabb(pos_in, aabb_node);
+    // the nearest point of aabb to interested point is farther, no need for check nodes inside aabb
+    if signed_dis_cur >= dis_nearest {
+        return;
+    }
 
     // no further edit from here
     // ---------------------------------------------------------------
@@ -287,43 +299,63 @@ fn nearest_kdtree_faster(
 
     if i_depth % 2 == 0 {
         // division in x direction
-        let aabb_west = [aabb_node[0], aabb_node[1], pos_node.x, aabb_node[3]];
-        let aabb_east = [pos_node.x, aabb_node[1], aabb_node[2], aabb_node[3]];
-        nearest_kdtree_naive(
+        let mut aabb_west = [aabb_node[0], aabb_node[1], pos_node.x, aabb_node[3]];
+        let mut aabb_east = [pos_node.x, aabb_node[1], aabb_node[2], aabb_node[3]];
+
+        let mut idx_west = nodes[idx_node].idx_node_left;
+        let mut idx_east = nodes[idx_node].idx_node_right;
+
+        let signed_dis_west = signed_distance_aabb(pos_in, &aabb_west);
+        let signed_dis_east = signed_distance_aabb(pos_in, &aabb_east);
+        if signed_dis_east < signed_dis_west {
+            mem::swap(&mut aabb_west, &mut aabb_east);
+            mem::swap(&mut idx_west, &mut idx_east);
+        }
+        // always check nearer node first, sometimes can skip search in farther node
+        nearest_kdtree_faster(
             idx_node_nearest,
             pos_in,
             nodes,
-            nodes[idx_node].idx_node_left,
+            idx_west,
             &aabb_west,
             i_depth + 1,
         );
-        nearest_kdtree_naive(
+        nearest_kdtree_faster(
             idx_node_nearest,
             pos_in,
             nodes,
-            nodes[idx_node].idx_node_right,
+            idx_east,
             &aabb_east,
             i_depth + 1,
         );
     } else {
         // division in y-direction
-        let aabb_north = [aabb_node[0], pos_node.y, aabb_node[2], aabb_node[3]];
-        let aabb_south = [aabb_node[0], aabb_node[1], aabb_node[2], pos_node.y];
-        // division in y-direction
-        nearest_kdtree_naive(
+        let mut aabb_north = [aabb_node[0], pos_node.y, aabb_node[2], aabb_node[3]];
+        let mut aabb_south = [aabb_node[0], aabb_node[1], aabb_node[2], pos_node.y];
+
+        let mut idx_north = nodes[idx_node].idx_node_right;
+        let mut idx_south = nodes[idx_node].idx_node_left;
+
+        let signed_dis_north = signed_distance_aabb(pos_in, &aabb_north);
+        let signed_dis_south = signed_distance_aabb(pos_in, &aabb_south);
+        if signed_dis_south < signed_dis_north {
+            mem::swap(&mut aabb_north, &mut aabb_south);
+            mem::swap(&mut idx_north, &mut idx_south);
+        }
+        nearest_kdtree_faster(
             idx_node_nearest,
             pos_in,
             nodes,
-            nodes[idx_node].idx_node_left,
-            &aabb_south,
+            idx_north,
+            &aabb_north,
             i_depth + 1,
         );
-        nearest_kdtree_naive(
+        nearest_kdtree_faster(
             idx_node_nearest,
             pos_in,
             nodes,
-            nodes[idx_node].idx_node_right,
-            &aabb_north,
+            idx_south,
+            &aabb_south,
             i_depth + 1,
         );
     }
