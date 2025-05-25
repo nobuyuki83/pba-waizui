@@ -78,7 +78,11 @@ Let's assume that the value at the pixel stands for the temperature at the cente
 From the temperature at the center of the pixel, we can compute the temperature at arbitrary location in the grid by *bi-linear interpolation*.   
 Compute the gradient of the temperature such that we can move the particles in the direction of the negative gradient. 
 
-Compute the north-west pixel at given location `xy` by changing the `line #11`.
+Compute the north-west pixel at given location `xy` by changing around the `line #11` (see the illustration below).
+
+![figure](figure.png)
+
+
 Make sure your code can past the test.
 
 ```bash
@@ -86,7 +90,7 @@ cd pba-<username>/task05
 cargo test --release 
 ```
 
-Then compute the gradient of the *bi-linear interpolation* at the `line #66`.
+Then compute the gradient of the *bi-linear interpolation* around the `line #66`.
 
 Run the code with different resolution by setting `--image-resolution` as `128`, `256`, and `512`. 
 
@@ -97,11 +101,11 @@ cargo run --release -- --img-resolution ???
 
 save the `output.gif` as `problem1_128.gif`, `problem1_256.gif` and `problem1_256.gif` so you can see the animation below.
 
-![problem1_128](problem1_128.gif)
+![problem1 128](problem1_128.gif)
 
-![problem1_256](problem1_256.gif)
+![problem1 256](problem1_256.gif)
 
-![problem1_512](problem1_512.gif)
+![problem1 512](problem1_512.gif)
 
 Observe that convergence of the Gauss-Seidel method become slower for the large grid. 
 
