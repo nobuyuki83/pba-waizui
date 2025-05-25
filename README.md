@@ -46,8 +46,8 @@ Topics:
 | (3)<br> Apr. 28  | **Time Integration**<br>Backward & forward Euler method, particle system, Barnes–Hut method                    | [task01](task01) | [5,6]   |
 | (4)<br> May 8    | **Newtonian Mechanics**<br/>                                                                                   | [task02](task02) | [7]     |
 | (5)<br> May 12   | **Collision Detection**<br/>principal component analysis<br>sort & sweep method, bounding volume hierarchy<br> | [task03](task03) | [8,9]   |
-| (6)<br> May 19   | **Linear System**<br/>matrix data structure, Conjugate gradient method                                         | [task04](task04) | [10,11] |
-| (7)<br> May 26   | **Simple Elastic Energy**<br/>Newton-Raphson method<br>mass-spring system                                      | task05           |         |
+| (6)<br> May 19   | **Linear System**<br/>matrix data structure, Conjugate gradient method                                         | [task04](task04) | [10,12] |
+| (7)<br> May 26   | **Simple Elastic Energy**<br/>Newton-Raphson method<br>mass-spring system                                      | [task05](task05) | [11,13] |
 | (8)<br> June 9   | **Programming 2**<br>Introduction to Unity & C#                                                                | task06           |         |
 | (9)<br> June 16  | **Dynamic Simulation**<br/>Variational time integration                                                        | task07           |         |
 | (10)<br> June 23 | **Optimization with Constraint**<br/> Lagrange multiplier method                                               | task08           |         |
@@ -69,6 +69,7 @@ Topics:
 - [10] [Matrix Data Structure](http://nobuyuki-umetani.com/pba2025s/matrix_data_structure.pdf)
 - [11] [Linear System Solver](http://nobuyuki-umetani.com/pba2025s/linear_system_solver.pdf)
 - [12] [Jacobian & Hessian](http://nobuyuki-umetani.com/pba2025s/jacobian_hessian.pdf)
+- [13] [Grid & Mesh Interpolatio](http://nobuyuki-umetani.com/pba2025s/grid_mesh_interpolation.pdf) 
 
 ## Grading
 
@@ -90,7 +91,7 @@ There are many small programming assignments. To do the assignments, you need to
 | [task02](task02) | Rust     | Linear Momentum Conservation                                        | ![](task02/thumbnail.gif) |
 | [task03](task03) | Rust     | Acceleration of N-body Simulation                                   | ![](task03/thumbnail.gif) |
 | [task04](task04) | Rust     | Accelerated nearest search using Kd-Tree                            | ![](task04/thumbnail.gif) |
-| task05           | Rust     | Solving Laplace equation with Gauss-Seidel Method                   |                           |
+| [task05](task05) | Rust     | Solving Laplace equation with Gauss-Seidel Method                   | ![](task05/thumbnail.gif) |
 | task06           | C#       | Gradient Descent for Mass-Spring Simulation                         |                           |
 | task07           | C#       | Dynamic Mass-spring System using Variational Euler Time Integration |                           |
 | task08           | C#       | Controlling Volume of a Mesh using Lagrange-Multiplier Method       |                           |

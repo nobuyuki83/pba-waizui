@@ -40,3 +40,7 @@ jobs:
           cargo build --verbose                    
           cd ../task04
           cargo run --verbose --release
+          cd ../task05
+          cargo run --verbose --release                    
+          cd ../task05
+          cargo test --verbose --release
