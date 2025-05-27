@@ -71,8 +71,20 @@ pub fn gradient(xy: &[f32; 2], img_resolution: usize, pix2val: &[f32]) -> [f32; 
     // ---------------------
     // write some code below to compute gradient
 
-    [0f32, 0f32] // comment out
+    /*
+    let f(s,t) = (1-s)g(t)+s*h(t)
+        g(t) = (1-t)*val_nw + t*val_sw
+        h(t) = (1-t)*val_ne + t*val_se
+        s = resolution*u
+        t = resolution*v
+    thus ∂f/∂u = (∂f/∂s)*(∂s/∂u)=(-g(t)+h(t))*resolution
+         ∂f/∂v = (∂f/∂t)*(∂t/∂u)=((1-s)(val_sw-val_nw)+s(val_se-val_ne))*resolution
+    */
 
+    let dfdx = -(1. - ry) * val_sw + (1. - ry) * val_se + ry * val_ne - ry * val_nw;
+    let dfdy = -(1. - rx) * val_sw - rx * val_se + rx * val_ne + (1. - rx) * val_nw;
+
+    [dfdx * img_resolution as f32, dfdy * img_resolution as f32]
     // no edit from here
     // -----------------
 }
@@ -116,8 +128,8 @@ fn solve_laplace_gauss_seidel_on_grid(
             let val_east = pix2val[(j + 1) * img_resolution + i];
             // ------------------------
             // write some code below
-            /* 
-            lv = 0, 
+            /*
+            lv = 0,
             l = [[4,-1,-1,-1,-1],
                  [-1,4,-1,-1,-1],
                  [-1,-1,4,-1,-1],
