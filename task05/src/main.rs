@@ -11,8 +11,16 @@ pub fn pixel_north_west_to_xy(xy: &[f32; 2], img_resolution: usize) -> Option<us
     // ------------------
     // implement some code below.
 
-    None // comment out
+    if x < 0f32 || x > (img_resolution as f32 - 1f32) {
+        return None;
+    }
 
+    if y < 0f32 || y > (img_resolution as f32 - 1f32) {
+        return None;
+    }
+    // pixel index starts from top-left corner
+    let y_pixel = (img_resolution as f32 - y - 2.).max(0.).round();
+    Some((y_pixel as usize * img_resolution) + (x - 1.).max(0.).round() as usize)
     // no edit from here
     // -----------------
 }
@@ -108,8 +116,18 @@ fn solve_laplace_gauss_seidel_on_grid(
             let val_east = pix2val[(j + 1) * img_resolution + i];
             // ------------------------
             // write some code below
+            /* 
+            lv = 0, 
+            l = [[4,-1,-1,-1,-1],
+                 [-1,4,-1,-1,-1],
+                 [-1,-1,4,-1,-1],
+                 [-1,-1,-1,4,-1],
+                 [-1,-1,-1,-1,4]]
+            for every pixel center v1, v2, v3, v4, v5,
+            Gaussian-Seidel: iterate v1 = (val_north+val_south+val_west+val_east)/4 , v2 = ...
+            */
 
-            // pix2val[i_pix_center] =  // hint
+            pix2val[i_pix_center] = (val_north + val_south + val_west + val_east) / 4f32
 
             // no edit from here
             // -------------------------------
