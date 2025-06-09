@@ -64,8 +64,8 @@ You do not see the `annulus` objet in the `Game` window (center) because default
 - Set the radius of the sphere collider to `0.31`
 
 ### Modify the Code
-- Drag `pba-<username>/task06/task06/MyCloth.cs` and `pba-<username>/task06/task06/TopologyOfTriMesh.cs` to the `Assets` window. 
-- Attach `MyCloth.cs` to the `default` GameObject.
+- Drag `pba-<username>/task06/MyCloth.cs` and `pba-<username>/task06/TopologyOfTriMesh.cs` to the `Assets` window. 
+- Attach `MyCloth.cs` in the `Assets` window to the `default` GameObject.
 
 ### Modify the Code
 This program means to compute deformation of skirt as a mass-spring system. 
