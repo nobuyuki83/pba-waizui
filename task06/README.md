@@ -64,8 +64,13 @@ You do not see the `annulus` objet in the `Game` window (center) because default
 - Set the radius of the sphere collider to `0.31`
 
 ### Modify the Code
-This program means to compute deformation of skirt as a mass-spring system. The total energy of the system is shown in the standard output. And that energy should be minimized.
-You will see the energy in the `Console` window.   
+- Drag `pba-<username>/task06/task06/MyCloth.cs` and `pba-<username>/task06/task06/TopologyOfTriMesh.cs` to the `Assets` window. 
+- Attach `MyCloth.cs` to the `default` GameObject.
+
+### Modify the Code
+This program means to compute deformation of skirt as a mass-spring system. 
+Run the program, and you will see the total energy in the `Console` window. 
+And this energy should be minimized.
 
 The current code does not compute the gradient of the elastic energy of a spring. 
 Hence, the energy minimization does not lead to elastic deformation.      
