@@ -70,7 +70,7 @@ You will see the energy in the `Console` window.
 The current code does not compute the gradient of the elastic energy of a spring. 
 Hence, the energy minimization does not lead to elastic deformation.      
 
-Write a few lines of code around `line #94` to compute the gradient for gradient descent.
+Write a few lines of code around `line #94` in the `pba-<username>/task06/task06/Assets` to compute the gradient for gradient descent.
 
 ### Take a screenshot
 - Set the window resolution to 300x300.
