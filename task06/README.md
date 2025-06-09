@@ -74,9 +74,9 @@ Write a few lines of code around `line #94` to compute the gradient for gradient
 
 ### Take a screenshot
 - Set the window resolution to 300x300.
-- Set up the ｀Recoder｀ package for screenshot video (see the [Lecture Material about Unity](http://nobuyuki-umetani.com/pba2025s/unity.pdf))
+- Set up the `Recorder` package for screenshot video (see the [Lecture Material about Unity](http://nobuyuki-umetani.com/pba2025s/unity.pdf))
 - Capture the screen from 0th to 300th frame.
-- Rename the screenshot image and place it as `pba-<username>/task06/problem1.gif`
+- Rename the screenshot image and place it as `pba-<username>/task06/problem2.gif`
 
 ![problem2](problem2.gif)
 

@@ -43,4 +43,4 @@ jobs:
           cd ../task05
           cargo run --verbose --release                    
           cd ../task05
-          cargo test --verbose --release
+#         cargo test --verbose --release

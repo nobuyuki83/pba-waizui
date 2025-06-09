@@ -72,7 +72,8 @@ Topics:
 - [13] [Grid & Mesh Interpolation](http://nobuyuki-umetani.com/pba2025s/grid_mesh_interpolation.pdf)
 - [14] [Unity](http://nobuyuki-umetani.com/pba2025s/unity.pdf)
 - [15] [Mass Spring System](http://nobuyuki-umetani.com/pba2025s/mass_spring_system.pdf)
-- [16] [Optimization](http://nobuyuki-umetani.com/pba2025s/optimization.pdf)
+- [16] [Vector Differentiation](http://nobuyuki-umetani.com/pba2025s/vector_differentiation.pdf)
+- [17] [Optimization](http://nobuyuki-umetani.com/pba2025s/optimization.pdf)
 
 ## Grading
 
