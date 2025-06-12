@@ -93,6 +93,10 @@ public class MyCloth : MonoBehaviour
         float length = Vector3.Distance(node2xyz[0], node2xyz[1]); // distance between p0 and p1
         // ---------- write some code below
 
-        return new Vector3[2] { Vector3.zero, Vector3.zero }; // comment out this line
+        float C = length - length_ini; // the length differences.
+        var coeff = stiffness * C / length;
+        var dp0 = coeff * (node2xyz[0] - node2xyz[1]);
+
+        return new Vector3[2] { dp0, -dp0 }; 
     }
 }
