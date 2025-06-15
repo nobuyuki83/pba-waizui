@@ -8,7 +8,28 @@
 
 ## Before Doing Assignment
 
-If you have not installed Unity & Blender on your computer, install them if they are not installed on your computer. 
+If you have not installed Unity & Blender on your computer, install them if they are not installed on your computer.
+
+First, update your local repository.
+
+```bash
+$ cd pba-<username>  # go to the local repository
+$ git checkout main  # set main branch as the current branch
+$ git branch -a       # make sure you are in the main branch
+$ git fetch origin main  # download the main branch from the remote repository
+$ git reset --hard origin/main # reset the local main branch same as remote repository
+```
+
+If you encounter some errors, give up updating your local repository and restart from the remote repository.
+In other words, clone the remote repository in a new location (see [task00](../task00) for cloning).
+
+Create the `task07` branch and set it as the current branch.
+
+```bash
+$ git branch task07    # create task07 branch
+$ git checkout task07  # switch into the task07 branch
+$ git branch -a        # make sure you are in the task07 branch
+```
 
 Now you are ready to go!
 
