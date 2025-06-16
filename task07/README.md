@@ -83,14 +83,12 @@ You do not see the `annulus` objet in the `Game` window (center) because default
 This program means to compute dynamic animation of a skirt as a mass-spring system. 
 The program uses the variational Euler's method to compute implicit time integration. 
 The variational problem is solved using the Newton's method.
+
 The current code does not compute the hessian of the elastic energy of the spring very accurately so the simulation is unstable.
+write code to correctly compute hessian of a spring.　`node2vtx[i_node]` stands for spring's end positions.
+When the return hessian can be written as `float3x3[3][3] w`, `w[i_node][j_node]` stands for Jacobian of energy gradient for `i_node`'s position w.r.t `j_node`'s position.
 
-// write code to correctly compute hessian of a spring.
-// ddw[i_node][j_node] stands for derivative of dw[i_node] w.r.t the end-point's position node2xyz[j_node]
-// the current hessian computed by the code below is not very accurate, so the simulation is unstable.
-
-
-Write a few lines of code around `line #52` in the `pba-<username>/task07/task07/MyCloth.cs` to compute hessian accurately.
+Write a few lines of code around `line #140` in the `pba-<username>/task07/task07/MyCloth.cs` to compute hessian accurately.
 
 ### Take a screenshot
 - Make sure the window resolution to 300x300.
