@@ -134,11 +134,23 @@ public class MyCloth : MonoBehaviour
     static float3x3[,] hessian_spring(float3[] node2xyz, float length_ini, float stiffness) {
         float length = math.distance(node2xyz[0], node2xyz[1]); // distance between p0 and p1
         float C = length - length_ini; // the length differences.
-        float3 u01 = math.normalize(node2xyz[1] - node2xyz[0]);
-        float3x3 l = OuterProduct(u01, u01);
+        float3 u01 = math.normalize(node2xyz[1] - node2xyz[0]); 
+        float3x3 l = OuterProduct(u01, u01); 
         float3x3 n = stiffness * l;
+
         // ----------------------
         // write some code below to modify the hessian
+        /*
+         ∂f/∂p0 = k ⋅ [ (1 - L/r) ⋅ I + (L / r) ⋅ (d/r ⊗ d/r) ]
+         where: d = p1 - p0, 
+                L = length_ini, 
+                r = length, 
+                I is the identity matrix, 
+                k is the stiffness
+        */
+        n = (length_ini/length)*n ; 
+        float3x3 lhs = (stiffness*C/length)* float3x3.identity; 
+        n += lhs; 
 
         float3x3 o = n;
         return new float3x3[2,2] {
