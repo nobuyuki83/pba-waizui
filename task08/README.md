@@ -104,7 +104,7 @@ Play the Unity project for more than the 160th frame, then you will see a mesh e
 Let's visualize it nicely using Blender.
 
 Follow the [task07's document](`../task07/README.md`) to 
-  - launch blender
+  - launch Blender
   - import `pba-<username>/tas08/task08/Assets/task08.obj`
   - set the camera position `(X:0m, Y: 2.5m, Z: 0.5m)`, rotation `(X: 78deg, Y: 0deg, Z: 180deg)`, and scale `(1.0, 1.0, 1.0)`.
   - set the output image resolution X as `400 px`, Resolution Y as `300 px`.
@@ -146,7 +146,7 @@ Finally, press `F12` key to see the rendered result. In the `Blender Render` win
 
 The image needs to be shown below.
 
-![problem1](problem1.png)
+![problem2](problem2.png)
 
 
 
