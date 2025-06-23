@@ -77,7 +77,7 @@ Now let's minimize the spring energy while setting the volume constraint using t
 Write a few lines of code around `line #172` in the `pba-<username>/task08/task08/MyInflater.cs` to compute gradient of the volume of tetrahedron connecting the origin and 3 points.
 Note that the volume of a water-tight mesh can be computed as the sum of the volume of tetrahedral connecting the origin and the triangle corners.   
 
-Write a few lines of code around `line #78` ` in the `pba-<username>/task08/task08/MyInflater.cs` to compute add elements related to the lagrange multiplier to the block sparse matrix and the right-hand-side (RHS) vector. 
+Write a few lines of code around `line #78` in the `pba-<username>/task08/task08/MyInflater.cs` to compute add elements related to the lagrange multiplier to the block sparse matrix and the right-hand-side (RHS) vector. 
 Note that, the block sparse matrix is consist of set of 3x3 matrix. 
 The last two columns and the last two rows are kept zero (see picture below).
 
