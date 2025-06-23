@@ -68,7 +68,9 @@ Do the following procedure (mostly similar to `task06` and `task07`).
   - `pba-<username>/task08/TopologyOfUniformMesh.cs`
   - `pba-<username>/task08/BlockSparseMatrix.cs`
   - `pba-<username>/task08/ObjExporterToAssets.cs`
-- Attach `Infrater.cs` in the `Assets` window to the `default` GameObject in the `bunny` Prefab. 
+- Attach `Infrater.cs` in the `Assets` window to the `default` GameObject in the `bunny` Prefab.
+
+### Edit the Codes
 
 Now let's minimize the spring energy while setting the volume constraint using the Lagrange multiplier method. 
 
