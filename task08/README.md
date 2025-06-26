@@ -94,9 +94,10 @@ The last two columns and the last two rows are kept zero (see picture below).
 
 Write down the energy value at the 300th frame shown in the Debug output in the `Console` window
 
-| energy at 300th frame | lambda at 300th frame |
-|-----------------------|-----------------------|
-| ???                   | ???                   |
+|                       | energy at 300th frame | lambda at 300th frame |
+|-----------------------|-----------------------|-----------------------|
+|with volume Hessian    | 0.00958372            | -0.1780094            |
+|with out volume Hessian| 0.00933408            | -0.1815574            |
 
 
 ## Problem 2: Blender rendering

@@ -79,7 +79,51 @@ public class MyInflater : MonoBehaviour
             // write some code below to set values in the linear system to set constraint to specify volume
             // use the lagrange multiplier method to set the volume constraint
 
+            // volume hessian, not adding this still converges, not sure why
+            #region volume hessian (can be omitted)
+            const float coeff = 1.0f / 6.0f;
+            float3x3[,] hessian = new float3x3[3, 3];
 
+            hessian[0, 0] = float3x3.zero;
+            hessian[1, 1] = float3x3.zero;
+            hessian[2, 2] = float3x3.zero;
+
+            hessian[0, 1] = -coeff * CrossMatrix(node2xyz[2]);
+            hessian[1, 0] = coeff * CrossMatrix(node2xyz[2]);
+
+            hessian[0, 2] = coeff * CrossMatrix(node2xyz[1]);
+            hessian[2, 0] = -coeff * CrossMatrix(node2xyz[1]);
+
+            hessian[1, 2] = -coeff * CrossMatrix(node2xyz[0]);
+            hessian[2, 1] = coeff * CrossMatrix(node2xyz[0]);
+
+            for (int i = 0; i < 3; i++) {
+                int i_vtx_i = node2vtx[i];
+                for (int j = 0; j < 3; j++) {
+                    int i_vtx_j = node2vtx[j];
+                    bsm.AddBlockAt(i_vtx_i, i_vtx_j, -lambda * hessian[i, j]);
+                }
+            }
+            #endregion
+            
+
+            for (int i = 0; i < 3; i++) {
+                int i_vtx = node2vtx[i];
+                // add constraint to the block sparse matrix
+                bsm.AddBlockAt(i_vtx, num_vtx, new float3x3(
+                    -grad_volume[i].x, 0, 0,
+                    -grad_volume[i].y, 0, 0,
+                    -grad_volume[i].z, 0, 0));
+                
+                bsm.AddBlockAt(num_vtx, i_vtx, new float3x3(
+                    -grad_volume[i].x, -grad_volume[i].y, -grad_volume[i].z,
+                    0, 0, 0,
+                    0, 0, 0));
+
+                rhs_vector[i_vtx] -= lambda * grad_volume[i];
+            }
+            
+            rhs_vector[num_vtx].x -= volume; 
 
             // end of the edit
             // ---------------------
@@ -113,7 +157,7 @@ public class MyInflater : MonoBehaviour
         {
             bsm.AddBlockAt(i_vtx, i_vtx, float3x3.identity * 1.0f);
         }
-        Debug.Log($"#frame: {i_frame},  energy: {energy}, lambda: {lambda}");
+        Debug.Log($"#frame: {i_frame},  energy: {energy}, lambda: {lambda}, volume: {rhs_vector[num_vtx].x}");
         float3[] delta = bsm.ConjugateGradientSolver(rhs_vector, 50, 1e-7f);
         for (int i_vtx = 0; i_vtx < num_vtx; ++i_vtx)
         {
@@ -131,6 +175,13 @@ public class MyInflater : MonoBehaviour
             Debug.Log("Obj file written to " + path);
         }        
 //        Debug.Assert(false);
+    }
+
+    static float3x3 CrossMatrix(float3 a) {
+        return new float3x3(
+            0, -a[2], a[1],
+            a[2], 0, -a[0],
+            -a[1], a[0], 0);
     }
 
     static float3x3 OuterProduct(float3 a, float3 b) {
@@ -170,6 +221,12 @@ public class MyInflater : MonoBehaviour
         float3[] gradient = new float3[3];
         // ---------        
         // write some code to compute the gradient of the volume with respect to the vertex positions
+        
+        // order is critical
+        const float coeff = 1.0f / 6.0f;
+        gradient[0] = coeff* math.cross(node2xyz[2], node2xyz[1]);
+        gradient[1] = coeff* math.cross(node2xyz[0], node2xyz[2]);
+        gradient[2] = coeff* math.cross(node2xyz[1], node2xyz[0]);
 
         // end of editing
         // ---------------
