@@ -37,7 +37,11 @@ public class MyHangerGD : MonoBehaviour
             Vector3 v2 = vtx2xyz[i2];
             float volume_tet = Vector3.Dot(Vector3.Cross(v0, v1), v2) / 6.0f;
             volume += volume_tet;
+
+            Vector3 cog_tet = (v0 + v1 + v2) / 4.0f;
+            cog += volume_tet * cog_tet; // mass* centroid 
         }
+        cog /= volume;
         // end of edit
         // ------------------------
         Debug.Log("Volume: " + volume + " CoG" + cog);
@@ -70,6 +74,30 @@ public class MyHangerGD : MonoBehaviour
             // edit below to compute the gradient
             Vector3 dwdt = Vector3.zero; // differentiation of the energy w.r.t. translation
             Vector3 dwdo = Vector3.zero; // differentiation of the rotation w.r.t. rotation
+
+            /* 
+             E(t,o) = E_p(t,o) + E_g(t,o), 
+             where: k = penalty, m = mass, g = gravity, R(o,p) = rotation p by o
+             E_p(t,o) = 0.5*k * ||t+R(o,p) - p_goal||^2 => gradient = k(t+R(o,p) - p_goal), w.r.t. t
+             E_g(t,o) = -m * g * (t + R(o,p_cog)) => gradient = -m * g , w.r.t. t
+            */
+            dwdt = penalty * (pin_def - pin_goal) - mass * gravity;
+
+            /* 
+            since infinitesimal rotation is skew-symmetric matrix, ∂R(o,p)/∂o = skew(R(o,p)),
+            E_p(t,o) => gradient = k*(t+R(o,p) - p_goal)^T*skew(R(o,p)) 
+                                    = -k*(skew(R(o,p))*(t+R(o,p) - p_goal))^T
+                                    = -k*(R(o,p)x(t+R(o,p)-p_goal))^T, w.r.t. o
+            */ 
+            Vector3 dwdo_p = penalty * Vector3.Cross(rot * pin, pin_def - pin_goal);
+            /* 
+            E_g(t,o) => gradient = -m*g*skew(R(o,p_cog)), 
+                                 = m*(R(o,p_cog)x g)^T, w.r.t. o
+            */
+            Vector3 dwdo_g = -mass * Vector3.Cross(rot * cog, gravity);
+
+            dwdo = dwdo_p + dwdo_g;
+
             // end of edit
             // -----------------------------------
             this.transform.position -= lr * dwdt;
