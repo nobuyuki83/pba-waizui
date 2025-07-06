@@ -52,7 +52,7 @@ Topics:
 | (9)<br> June 16  | **Dynamic Simulation**<br/>Variational time integration                                                        | [task07](task07) | [17,18]    |
 | (10)<br> June 23 | **Optimization with Constraint**<br/> Lagrange multiplier method                                               | [task08](task08) | [19]       |
 | (11)<br> June 30 | **Rotation**<br>Rotation representation                                                                        | [task09](task09) | [20]       |
-| (12)<br> July 7  | **Rigid Body Dynamics** <br/>inertia tensor, <br/>angular velocity                                             | task10           |            |
+| (12)<br> July 7  | **Rigid Body Dynamics** <br/>inertia tensor, <br/>angular velocity                                             | [task10](task10) | [21,22]    |
 | (13)<br> July 14 | **Continuum Mechanics**<br> tensor,<br> finite element method                                                  |                  |            |
 
 #### Slides
@@ -77,7 +77,8 @@ Topics:
 - [18] [Variational Integration](http://nobuyuki-umetani.com/pba2025s/variational_integration.pdf)
 - [19] [Optimization with Constraints](http://nobuyuki-umetani.com/pba2025s/optimization_with_constraints.pdf)
 - [20] [Rotation](http://nobuyuki-umetani.com/pba2025s/rotation.pdf)
-- [21] [Rigid Body Approximation](http://nobuyuki-umetani.com/pba2025s/rigid_body_approximation.pdf)
+- [21] [Angular Velocity](http://nobuyuki-umetani.com/pba2025s/angular_velocity.pdf)
+- [22] [Rigid Body Approximation](http://nobuyuki-umetani.com/pba2025s/rigid_body_approximation.pdf)
 
 ## Grading
 
@@ -104,7 +105,7 @@ There are many small programming assignments. To do the assignments, you need to
 | [task07](task07) | C#       | Dynamic Mass-spring System using Variational Euler Time Integration | ![](task07/thumbnail.gif) |
 | [task08](task08) | C#       | Controlling Volume of a Mesh using Lagrange-Multiplier Method       | ![](task08/thumbnail.gif) |
 | [task09](task09) | C#       | Rotation and Energy Minimization                                    | ![](task09/thumbnail.gif) |
-| task10           | C#       | Simulation of Rigid Body Precession                                 |                           |
+| [task10](task10) | C#       | Simulation of Rigid Body Precession                                 | ![](task10/thumbnail.gif) |
 
 
 #### Policy
