@@ -37,7 +37,15 @@ public class MyRigidBody : MonoBehaviour
             // ----------------
             // write a few line of code below to update the angular velocity at the reference configuration `omega` using forward time integration
 
-            // omega += ???
+            /*
+            pre: torque = 0, 
+            thus:
+            according to: torque = skew(omega) * inertia_tensor * omega + inertia_tensor * d(omega)/dt
+            0 = skew(omega) * inertia_tensor * omega + inertia_tensor * d(omega)/dt
+            inertia_tensor^-1 * (-skew(omega) * inertia_tensor * omega) = d(omega)/dt
+            inertia_tensor^-1 * (-omega x inertia_tensor * omega) = d(omega)/dt
+            */
+            omega += math.mul(math.inverse(inertia_tensor), -math.cross(omega, math.mul(inertia_tensor, omega))) * timeStep;
 
             // end of edit
             // ----------------
@@ -87,7 +95,19 @@ public class MyRigidBody : MonoBehaviour
             float3 pa = p0 + p1 + p2;
             // -----------------
             // write some code below
-            res += (math.dot(pa* 0.25f, pa*0.25f)*float3x3.identity - OuterProduct(pa * 0.25f, pa * 0.25f)) * volume; // comment out, since this is a approximation where mass is centered at the cog of tetrahedron
+            // from integrating inertia over tetrahedron
+            float3x3 tet_inertia = float3x3.zero;
+            for(int a = 0; a < 3; a++) {
+                var va = vtx2xyz[tri2vtx[i_tri * 3 + a]];
+                for(int b = 0; b < 3; b++) {
+                    var vb = vtx2xyz[tri2vtx[i_tri * 3 + b]];
+                    var kdelta = a == b ? 1.0f : 0.0f;
+                    tet_inertia += (math.dot(va, vb) * float3x3.identity - OuterProduct(va, vb)) * (1f + kdelta); 
+                }
+            }
+            tet_inertia *= volume/20f;
+            res += tet_inertia;
+            // res += (math.dot(pa* 0.25f, pa*0.25f)*float3x3.identity - OuterProduct(pa * 0.25f, pa * 0.25f)) * volume; // comment out, since this is a approximation where mass is centered at the cog of tetrahedron
             // end of edit
             // ------------------
         }
