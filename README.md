@@ -53,7 +53,7 @@ Topics:
 | (10)<br> June 23 | **Optimization with Constraint**<br/> Lagrange multiplier method                                               | [task08](task08) | [19]       |
 | (11)<br> June 30 | **Rotation**<br>Rotation representation                                                                        | [task09](task09) | [20]       |
 | (12)<br> July 7  | **Rigid Body Dynamics** <br/>inertia tensor, <br/>angular velocity                                             | [task10](task10) | [21,22]    |
-| (13)<br> July 14 | **Continuum Mechanics**<br> tensor,<br> finite element method                                                  |                  |            |
+| (13)<br> July 14 | **Continuum Mechanics**<br> tensor,<br> finite element method                                                  |                  | [23,24,25] |
 
 #### Slides
 
@@ -79,6 +79,9 @@ Topics:
 - [20] [Rotation](http://nobuyuki-umetani.com/pba2025s/rotation.pdf)
 - [21] [Angular Velocity](http://nobuyuki-umetani.com/pba2025s/angular_velocity.pdf)
 - [22] [Rigid Body Approximation](http://nobuyuki-umetani.com/pba2025s/rigid_body_approximation.pdf)
+- [23] [Tensor](http://nobuyuki-umetani.com/pba2025s/tensor.pdf)
+- [24] [Finite Element Method](http://nobuyuki-umetani.com/pba2025s/finite_element_method.pdf)
+- [25] [Geometric Deformation](http://nobuyuki-umetani.com/pba2025s/geometric_deformation.pdf)
 
 ## Grading
 
@@ -92,6 +95,8 @@ Topics:
 There are many small programming assignments. To do the assignments, you need to create your own copy of this repository through **GitHub Classroom**.  These assignements needs to be submitted using **pull request** functionality of the GitHub. Look at the following document. 
 
 [How to Submit the Assignments](doc/submit.md)
+
+**The final submission deadline is at 15:00 pm on July 17th, 2025. The late submission won't be accepted after this final submission deadline.**
 
 | Task ID          | Language | Title (tentative)                                                   | Thumbnail                 |
 |:-----------------|:---------|:--------------------------------------------------------------------|:--------------------------|
